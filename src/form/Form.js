@@ -11,9 +11,9 @@ const Form = ({handlePageTemplate}) => {
 
     
     useEffect(()=>{
-        setAllData([{postionData, exstngRole, bonusPoint,quaRequ,city}]);
+        setAllData([{positionData, exstngRole, bonusPoint,quaRequ,city}]);
     })
-    const [postionData , setPostionData] = useState({
+    const [positionData , setpositionData] = useState({
         position:'',
         position_role:''
       })
@@ -23,7 +23,7 @@ const Form = ({handlePageTemplate}) => {
         name = event.target.name;
         value = event.target.value;
     
-        setPostionData({...postionData, [name] : value })
+        setpositionData({...positionData, [name] : value })
       }
     const handlecheck = (e) => {
     const { value, checked } = e.target;
@@ -97,7 +97,7 @@ const Form = ({handlePageTemplate}) => {
             <Box className='boxSec'>
                 <Grid item>
                     <Typography className='formLabel'>Position</Typography>
-                    <TextField name='position' value={postionData.position} onChange={getFormData} className='txtbox' id="standard-basic" placeholder='Ex-Grafics Designer' variant="standard" />
+                    <TextField name='position' value={positionData.position} onChange={getFormData} className='txtbox' id="standard-basic" placeholder='Ex-Grafics Designer' variant="standard" />
                 </Grid>
                 <Grid item>
                     <Typography className='formLabel'>Location</Typography>
@@ -135,7 +135,7 @@ const Form = ({handlePageTemplate}) => {
                 </Grid>
                 <Grid item>
                     <Typography className='formLabel'>About the role</Typography>
-                    <TextField name='position_role' value={postionData.position_role} onChange={getFormData} className='txtbox' id="standard-basic" 
+                    <TextField name='position_role' value={positionData.position_role} onChange={getFormData} className='txtbox' id="standard-basic" 
                     placeholder='Write some lines about the roles of the candidate.' 
                     variant="standard" />
                 </Grid>

@@ -1,0 +1,128 @@
+.formbg{
+    background: linear-gradient(135deg, #2FC3C7, #9474CB
+    );
+    height: 100vh;
+    display: flex;
+    .formframe{
+        background: #fff;
+        height: 86vh;
+        border-radius: 25px;
+        width: 65%;
+        margin: auto;
+        text-align: left;
+        overflow: auto;
+        .headingSec{
+            margin: 1.5em 2em 0.5em;
+            .headTitle{
+                color: #999999;
+                font-size: 2em;
+                font-weight: 800;
+            }
+            .headDescr{
+
+            }
+        }
+        .boxSec{
+            margin: 0.5em 2em;
+            .MuiGrid-item{
+                margin-bottom: 0.5em;
+            }
+            .formLabel{
+                font-size: 0.9em;
+                color: #2FC3C7;
+            }
+            .ckbox{
+                margin: -0.8em 0em;
+            }
+            .txtbox{
+                width: 80%;
+            }
+            .icoStyle{
+            }
+            .btnSec{
+                display: flex;
+                flex-direction: row-reverse;
+                .butnClass{
+                    background: #2FC3C7;
+                    color: #fff;
+                    padding: 0.6em 1em;
+                    border-radius: 25px;
+                }
+            }
+        }
+        
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 80%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #88888848; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.btnsec{
+
+}
+.template{
+    width: 555px;
+    margin: auto;
+    text-align: left;
+    margin: 1.5em;
+}
+.logoImg{
+    height: 5vh;
+    .imgSize{
+        width: 80%;
+    }
+}
+.hrpsitnSec{
+    text-align: center;
+
+}
+.greentxt{
+    color: #2fc3c6;
+    font-weight: 700 !important;
+    font-size: 0.7em !important;
+    margin-top: 0.5em !important;
+}
+.paratxt{
+    font-size: 0.6em !important;
+    .greentxt{
+        font-size: 1em !important;
+    }
+}
+.ultxt{
+    margin: 0px 0px 0px -20px !important
+}
+.locSec{
+    .lctnSec{
+        padding-right: 3px !important;
+    }
+    .jdsec{
+        border-left: 1px solid;
+        padding-left: 2em;
+        
+        .MuiTypography-root{
+            font-size: 0.6em !important;
+        }
+    }
+}
+
+.footer{
+    text-align: center;
+    margin-top: 30px !important;
+}

@@ -7,7 +7,7 @@ const Form = ({handlePageTemplate}) => {
     const [bonusPoint, setBonusPoint] = useState([{b_point : ''}]);
     const [quaRequ, setQuaRequ] = useState([{q_n_R : ''}]);
     const [city, setCity] = useState({ location: [] });
-    const [allData, setAllData] = useState([{role_data:'', point_data:'', req_data: '', loc_data: ''}]);
+    const [allData, setAllData] = useState([{postn_data:'', role_data:'', point_data:'', req_data: '', loc_data: ''}]);
 
     
     useEffect(()=>{
@@ -97,7 +97,7 @@ const Form = ({handlePageTemplate}) => {
             <Box className='boxSec'>
                 <Grid item>
                     <Typography className='formLabel'>Position</Typography>
-                    <TextField name='position' value={positionData.position} onChange={getFormData} className='txtbox' id="standard-basic" placeholder='Ex-Grafics Designer' variant="standard" />
+                    <TextField name='position' value={positionData.position} onChange={getFormData} className='txtbox' id="standard-basic" placeholder='Ex-Grafics Designer' variant="outlined" />
                 </Grid>
                 <Grid item>
                     <Typography className='formLabel'>Location</Typography>
@@ -137,7 +137,7 @@ const Form = ({handlePageTemplate}) => {
                     <Typography className='formLabel'>About the role</Typography>
                     <TextField name='position_role' value={positionData.position_role} onChange={getFormData} className='txtbox' id="standard-basic" 
                     placeholder='Write some lines about the roles of the candidate.' 
-                    variant="standard" />
+                    variant="outlined" />
                 </Grid>
                 <Grid item>
                     <Typography className='formLabel'>This is an exciting role and would entail you to</Typography>
@@ -146,7 +146,7 @@ const Form = ({handlePageTemplate}) => {
                             <TextField className='txtbox' id="standard-basic" value={singleRole.roles} name='roles'
                             placeholder='How this role will help them in the future?' 
                             onChange={(e) => handleRoleChange(e, index)}
-                            variant="standard" />
+                            variant="outlined" />
                             <Typography className='icoStyle' variant='span'><AddCircleOutline onClick={handleRoleAdd}/></Typography>
                             {exstngRole.length !== 1 && (<Typography className='icoStyle' variant='span'><RemoveCircleOutline onClick={handleRoleRemove}/></Typography>)}
                         </Grid>
@@ -160,7 +160,7 @@ const Form = ({handlePageTemplate}) => {
                             <TextField className='txtbox' id="standard-basic" value={singleBonus.b_point} name='b_point'
                             placeholder='Having these will make them stand out.' 
                             onChange={(e) => handleBonusChange(e, index)}
-                            variant="standard" />
+                            variant="outlined" />
                             <Typography className='icoStyle' variant='span'><AddCircleOutline onClick={handleBonusAdd}/></Typography>
                             {bonusPoint.length !== 1 && (<Typography className='icoStyle' variant='span'><RemoveCircleOutline onClick={handleBonusRemove}/></Typography>)}
                         </Grid>
@@ -173,7 +173,7 @@ const Form = ({handlePageTemplate}) => {
                             <TextField className='txtbox' id="standard-basic" value={singleQ_n_R.q_n_R} name='q_n_R'
                             placeholder='How this role will help them in the future?' 
                             onChange={(e) => handleQ_n_RChange(e, index)}
-                            variant="standard" />
+                            variant="outlined" />
                             <Typography className='icoStyle' variant='span'><AddCircleOutline onClick={handleQ_n_RAdd}/></Typography>
                             {quaRequ.length !== 1 && (<Typography className='icoStyle' variant='span'><RemoveCircleOutline onClick={handleQ_n_RRemove}/></Typography>)}
                         </Grid>

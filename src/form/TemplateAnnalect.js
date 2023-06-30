@@ -54,12 +54,6 @@ const TemplateAnnalect = ({handlePageForm}) => {
         </Grid>
         <Grid item className='hrpsitnSec'>
             <Typography>We Are looking for</Typography>
-            {/* {psData === 'hasValue' && (
-                <Typography className='greentxt' 
-                sx={{fontSize:'2em !important', marginTop: '-10px !important'}}>
-                    {psData.position === 'hasValue' ? <>{psData.position}</> : 
-                    <>Senior Graphics Designer</>}</Typography>
-            )} */}
             <Typography className='greentxt' 
                 sx={{fontSize:'2em !important', marginTop: '-10px !important'}}>
                     {nwPositionData.position}</Typography>
@@ -68,28 +62,14 @@ const TemplateAnnalect = ({handlePageForm}) => {
         <Grid container className='locSec'>
             <Grid item xs={8} md={8} className='lctnSec'>
             <Typography className='paratxt'>
-            {nwPositionData.position_role}
-                {/* We have an exciting role of  
-            <span className='greentxt' style={{fontSize: '1em !important'}}> {nwPositionData.position_role} </span>
-                     (Integrated Digital Production Artist) to drive and
-                    translate creative and contemporary ideas to solid
-                    design and impact. You will have a key role in
-                    design and deployment of creative campaigns
-                    with our global clients, including many Fortune 50
-                    companies. */}
-                </Typography>
+                {nwPositionData.position_role}
+            </Typography>
             </Grid>
             <Grid item xs={4} md={4} className='jdsec'>
-                {/* <Typography >Location : 
-                    <span>Bangalore/ Hyderabad/ Chennai/ Gurugram/
-                     Coimbatore/ Mumbai</span>
-                </Typography> */}
                 <Typography >Location :
-                {nwCity.location.map((index) =>(
-                     
+                    {nwCity.location.map((index) =>(
                         <span>{index} \ </span>
-                ))}
-                
+                    ))}
                 </Typography>
                 <Typography >www.annalect.com/in</Typography>
             </Grid>
@@ -134,11 +114,11 @@ const TemplateAnnalect = ({handlePageForm}) => {
                             getting the job done Excellent communication and interpersonal skills
                         </li>
                     </ul> */}
-                    {nwExstngRole.map((role_data, index) =>(
-                        <ul key={index}  className='paratxt ultxt'>
-                            <li>{role_data.roles}</li>
-                        </ul>
-                    ))}
+                    <ul  className='paratxt ultxt'>
+                        {nwExstngRole.map((role_data, index) =>(
+                            <li  key={index}>{role_data.roles}</li>
+                        ))}
+                    </ul>
                 </Box>
                 <Box className='desirable' >
                     <Typography sx={{fontWeight: '700', 
@@ -152,11 +132,11 @@ const TemplateAnnalect = ({handlePageForm}) => {
                             Working knowledge in After Effects.
                         </li>
                     </ul> */}
-                    {nwBonusPoint.map((des_data, index) =>(
-                        <ul key={index}  className='paratxt ultxt'>
-                            <li>{des_data.b_point}</li>
-                        </ul>
-                    ))}
+                    <ul  className='paratxt ultxt'>
+                        {nwBonusPoint.map((des_data, index) =>(
+                            <li key={index}>{des_data.b_point}</li>
+                        ))}
+                    </ul>
                 </Box>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -187,11 +167,11 @@ const TemplateAnnalect = ({handlePageForm}) => {
                             technology to deliver Ads to market
                         </li>
                     </ul> */}
-                    {nwQuaRequ.map((qne_data, index) =>(
-                        <ul key={index}  className='paratxt ultxt'>
-                            <li>{qne_data.q_n_R}</li>
-                        </ul>
-                    ))}
+                    <ul className='paratxt ultxt'>
+                        {nwQuaRequ.map((qne_data, index) =>(
+                            <li key={index}>{qne_data.q_n_R}</li>
+                        ))}
+                    </ul>
                 </Box>
             </Grid>
         </Grid>

@@ -60,9 +60,9 @@ const TemplateOmni = ({handlePageForm}) => {
             </Grid>
             <Grid item className='hrpsitnSec'>
                 <Typography className='orngtxt' sx={{fontSize:'2em !important', 
-                marginTop: '-10px !important'}}>Associate Director</Typography>
+                marginTop: '-10px !important'}}>{nwPositionData.position}</Typography>
                 <Typography className='orngtxt' sx={{fontSize:'0.8em', 
-                marginTop: '-5px !important'}}>Intelligent Automation (IA) Activation</Typography>
+                marginTop: '-5px !important'}}>{nwPositionData.sub_position}</Typography>
                 
             </Grid>
             <hr style={{borderColor:'#f69236'}} />
@@ -70,7 +70,9 @@ const TemplateOmni = ({handlePageForm}) => {
                 <Grid item md={5}></Grid>
                 <Grid item xs={8} md={7} className='lctnSec'>
                     <Typography className='paratxt jdsec'>
-                        Bangalore/ Hyderabad/ Chennai/Gurugram/ Coimbatore/ Mumbai
+                    {nwCity.location.map((index) =>(
+                        <span>{index} \ </span>
+                    ))}
                     </Typography>
                 </Grid>
             </Grid>
@@ -96,10 +98,10 @@ const TemplateOmni = ({handlePageForm}) => {
             <Grid container>
                     <Box className='workclslysec' >
                         <Typography className='orngtxt'>About the role</Typography>
-                        {/* <Typography  className='paratxt'>
-                            {nwPositionData.you_work_closely}
-                        </Typography> */}
                         <Typography  className='paratxt'>
+                            {nwPositionData.position_role}
+                        </Typography>
+                        {/* <Typography  className='paratxt'>
                             We have a role for Associate Director – Intelligent Automation Activation. This role 
                             entails you to lead the technical automation & RPA workstream for multiple 
                             clients/agencies, being responsible for driving innovative thinking and identifying 
@@ -112,7 +114,7 @@ const TemplateOmni = ({handlePageForm}) => {
                             all project phases; effectively manage associated issues and risks and ensure 
                             on-time and on-budget implementation delivery that meets clients' needs and 
                             requirements.
-                        </Typography>
+                        </Typography> */}
                     </Box>
             </Grid>
             <Grid container className='rlsnrespo'>
@@ -125,19 +127,6 @@ const TemplateOmni = ({handlePageForm}) => {
                     </Box>
                     <Box className='roledescr'>
                         <Typography className='orngtxt'>This is an exciting role and would entail you to</Typography>
-                        {/* <ul className='paratxt ultxt'>
-                            <li>
-                                Knowledgeable of (or have a strong desire to learn) latest industry trends,
-                                especially around automation/creative delivery</li>
-                            <li>
-                                Attention to detail with the ability to apply style and brand guidelines 
-                                consistently and accurately over a range of executions
-                            </li>
-                            <li>
-                                A positive personality & can-do attitude with a dedicated approach to 
-                                getting the job done Excellent communication and interpersonal skills
-                            </li>
-                        </ul> */}
                         {nwExstngRole.map((role_data, index) =>(
                             <ul key={index}  className='paratxt ultxt'>
                                 <li>{role_data.roles}</li>
@@ -147,15 +136,6 @@ const TemplateOmni = ({handlePageForm}) => {
                     <Box className='desirable' >
                         <Typography sx={{fontWeight: '700', 
                         fontSize: '0.7em', marginTop: '0.5em'}}>Desirable:</Typography>
-                        {/* <ul className='paratxt ultxt'>
-                            <li>
-                                Some experience programming in HTML, CSS & Javascript to code assets 
-                                for any advertising platform.
-                            </li>
-                            <li>
-                                Working knowledge in After Effects.
-                            </li>
-                        </ul> */}
                         {nwBonusPoint.map((des_data, index) =>(
                             <ul key={index}  className='paratxt ultxt'>
                                 <li>{des_data.b_point}</li>
@@ -166,31 +146,6 @@ const TemplateOmni = ({handlePageForm}) => {
                 <Grid item xs={12} md={6}>
                     <Box className='reqdescsec'>
                         <Typography className='orngtxt'>This may be the right role for you if you have</Typography>
-                        {/* <ul className='paratxt ultxt'>
-                            <li>
-                                3-5+ years previous experience as a finished artist/Digital designer in the 
-                                advertising, marketing and production industry
-                            </li>
-                            <li>
-                                Studio design and finished art & basic retouching for deliverables in 
-                                print and digital channels
-                            </li>
-                            <li>
-                                Excellent attention to detail and time management skills, allowing delivery 
-                                of work on time and to high standard
-                            </li>
-                            <li>
-                                Ability to prioritise and self-manage, escalating early to avoid potential 
-                                issues
-                            </li>
-                            <li>A critical eye for quality and strong ownership of brand guidelines</li>
-                            <li>Ensure all work has a high degree of design aesthetic & maintains creative 
-                                integrity</li>
-                            <li>Fluent in Adobe CS (InDesign, Illustrator, Photoshop)</li>
-                            <li>A desire to be part of team that is constantly evolving by using latest 
-                                technology to deliver Ads to market
-                            </li>
-                        </ul> */}
                         {nwQuaRequ.map((qne_data, index) =>(
                             <ul key={index}  className='paratxt ultxt'>
                                 <li>{qne_data.q_n_R}</li>

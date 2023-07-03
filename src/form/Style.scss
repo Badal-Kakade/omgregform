@@ -64,6 +64,66 @@
         
     }
 }
+.baseTemplate_anna{
+    flex-direction: column !important;
+    width: 650px !important;
+    .btnsec{
+        margin: 10px;
+        text-align: right;
+    }
+    .annabutn{
+        background: #2FC3C7;
+        border: none;
+        border-radius: 3px 0 0 3px;
+        color: #fff;
+        padding: 5px 10px;
+    }
+    .ombibutn{
+        background: #ffffff;
+        border: 1px solid #2FC3C7;
+        border-radius: 0 3px 3px 0;
+        color: #2FC3C7;
+        padding: 5px 10px;
+        margin-left: -1px;
+    }
+    .bckbutn{
+        margin-left: 15px !important;
+        background: #2fc3c7;
+        border: none;
+        color: #fff;
+        padding: 5px 15px;
+    }
+}
+.baseTemplate_omni{
+    flex-direction: column !important;
+    width: 650px !important;
+    background: #242938;
+    .btnsec{
+        margin: 10px;
+        text-align: right;
+    }
+    .annabutn{
+        background: #242938;
+        border: 1px solid #F69236;
+        border-radius: 3px 0 0 3px;
+        color: #F69236;
+        padding: 5px 10px;
+    }
+    .ombibutn{
+        background: #F69236;
+        border-radius: 0 3px 3px 0;
+        color: #242938;
+        padding: 5px 10px;
+        margin-left: -1px;
+    }
+    .bckbutn{
+        margin-left: 15px !important;
+        background: #F69236;
+        border: none;
+        color: #242938;
+        padding: 5px 15px;
+    }
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -101,7 +161,7 @@
     width: 600px;
     text-align: left;
     margin: 1.5em !important;
-    background: #000;
+    background: #242938;
     color: #fff;
     .logoImg_omni{
         align-content: center;
@@ -112,6 +172,7 @@
         }
     }
     .hrpsitnSec{
+        text-align: left;
     }
     .orngtxt{
         color: #F69236;
@@ -133,10 +194,16 @@
             padding-right: 3px !important;
         }
         .jdsec{
-            background: #F69236;
+           
             padding: 3px;
             margin-top: -8px;
             color: #000;
+            margin-right: -5px;
+            text-align: right;
+            span{
+                background: #F69236;
+                padding: 5px;
+            }
             
             .MuiTypography-root{
                 font-size: 0.6em !important;

@@ -2,40 +2,54 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const DbAxios = () => {
-  const [data, setData] = useState([]);
+  const [name, setName] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const handleCreate = async (e) => {
+    e.preventDefault();
 
-  const fetchData = async () => {
+    setLoading(true);
+
     try {
-        const response = await axios.get(
-            'https://oneomnicom-my.sharepoint.com/personal/badal_kakade_annalect_com/Lists/JD_Automation/AllItems.aspx',
-            {
-              headers: {
-                Accept: 'application/json;odata=verbose',
-              },
-            }
-          );
+      // Prepare the data to be sent to the SharePoint list
+      const itemData = {
+        name: name,
+      };
 
-      const items = response.data.d.results;
-      setData(items);
+      // Make a POST request to create a new item in the SharePoint list
+      await axios.post(
+        'https://oneomnicom-my.sharepoint.com/personal/badal_kakade_annalect_com/Lists/JD_Automation/AllItems.aspx?env=WebViewList',
+        itemData
+      );
+
+      // Clear the form and indicate successful creation
+      setName('');
+      alert('Item created successfully!');
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error creating item:', error);
+      alert('Error creating item. Please try again.');
     }
+
+    setLoading(false);
   };
 
   return (
     <div>
-      <h1>SharePoint Data</h1>
-      <ul>
-        {data.map((item) => (
-          <li key={item.Id}>{item.Title}</li>
-        ))}
-      </ul>
+      <h1>SharePoint List</h1>
+      <form onSubmit={handleCreate}>
+        <label>
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <button type="submit" disabled={loading}>
+          Create Item
+        </button>
+      </form>
     </div>
   );
 };
-
 export default DbAxios;

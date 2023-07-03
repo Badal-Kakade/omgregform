@@ -172,7 +172,7 @@ const Form = ({handlePageTemplate}) => {
                         <Grid container key={index}>
                             <TextField className='txtbox' id="standard-basic" value={singleRole.roles} 
                             name='roles' placeholder='How this role will help them in the future?' 
-                            onChange={(e) => handleRoleChange(e, index)}
+                            onChange={(e) => handleRoleChange(e, index)} autoComplete='off'
                             variant="outlined" />
                             {exstngRole.length < 4 && <Typography className='icoStyle' variant='span'>
                                 <AddCircleOutline onClick={handleRoleAdd}/></Typography>}
@@ -187,7 +187,7 @@ const Form = ({handlePageTemplate}) => {
                     {bonusPoint.map((singleBonus, index) => (
                         <Grid container key={index}>
                             <TextField className='txtbox' id="standard-basic" value={singleBonus.b_point} name='b_point'
-                            placeholder='Having these will make them stand out.' 
+                            placeholder='Having these will make them stand out.' autoComplete='off'
                             onChange={(e) => handleBonusChange(e, index)} variant="outlined" />
                             {bonusPoint.length < 3 &&<Typography className='icoStyle' variant='span'><AddCircleOutline 
                             onClick={handleBonusAdd}/></Typography>}
@@ -202,8 +202,8 @@ const Form = ({handlePageTemplate}) => {
                     {quaRequ.map((singleQ_n_R, index) => (
                         <Grid container key={index}>
                             <TextField className='txtbox' id="standard-basic" value={singleQ_n_R.q_n_R} 
-                            name='q_n_R' placeholder='How this role will help them in the future?' 
-                            onChange={(e) => handleQ_n_RChange(e, index)} variant="outlined" />
+                            name='q_n_R' autoComplete='off' onChange={(e) => handleQ_n_RChange(e, index)}
+                            placeholder='How this role will help them in the future?' variant="outlined" />
                             {quaRequ.length <6 && (<Typography className='icoStyle' variant='span'>
                                 <AddCircleOutline onClick={handleQ_n_RAdd}/>
                             </Typography>)}

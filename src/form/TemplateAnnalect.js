@@ -42,7 +42,6 @@ const TemplateAnnalect = ({handlePageForm}) => {
   return (
     <>
     <div>
-        <div className='bckbtn'><Button onClick={handlePageForm}>Back</Button></div>
         <div className='btnsec'><Button onClick={generatePDF}>Print</Button></div>
     </div>
     

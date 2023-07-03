@@ -6,6 +6,7 @@ import { StateProvider } from './Context';
 import TemplateOmni from './form/TemplateOmni';
 import DbAxios from './dbconnection/DbAxios'
 import { sp } from '@pnp/sp';
+import Template from './form/Template';
 
 function App() {
   const [page, setPage] = useState('form');
@@ -25,11 +26,22 @@ function App() {
         headers: {
           Accept: 'application/json;odata=verbose',
         },
-        baseUrl: 'http://localhost:3000/',
+        baseUrl: 'https://oneomnicom-my.sharepoint.com/personal/badal_kakade_annalect_com/Lists/JD_Automation/AllItems.aspx',
       },
     });
     getCurrentUser();
+    readItems();
   }, []);
+
+  const readItems = async () => {
+    try {
+      const list = sp.web.lists.getByTitle('JD_Automation');
+      const items = await list.items.get();
+      console.log('Retrieved items:', items);
+    } catch (error) {
+      console.error('Error retrieving items:', error);
+    }
+  };
 
   
     
@@ -37,14 +49,13 @@ function App() {
     setPage('form');
   }
   const handlePageTemplate = () =>{
-    setPage('annatemplet');
+    setPage('template');
   }
   return (
     <StateProvider>
       <div className="App">
         {page === 'form' && (<Form handlePageTemplate={handlePageTemplate}/>)}
-        {page === 'annatemplet' && (<TemplateAnnalect handlePageForm={handlePageForm}/>)}
-        {page === 'omnitemplet' && (<TemplateOmni handlePageForm={handlePageForm}/>)}
+        {page === 'template' && (<Template handlePageForm={handlePageForm}/>)}
         {/* <DbAxios /> */}
       </div>
     </StateProvider>
